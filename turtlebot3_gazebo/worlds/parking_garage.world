@@ -84,10 +84,10 @@
       <wall_time>1730448978 125499672</wall_time>
       <iterations>1818084</iterations>
       <model name='parking_garage'>
-        <pose>0 0 -39.4098 0 -0 0</pose>
+        <pose>0 0 -39.15 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0 0 -39.4098 0 -0 0</pose>
+          <pose>0 0 -39.15 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>nan nan nan nan nan nan</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
