@@ -77,6 +77,11 @@ install(DIRECTORY include/
   DESTINATION include/
 )
 
+install(PROGRAMS
+  scripts/run_two_models.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 ################################################################################
 # Macro for ament package
 ################################################################################

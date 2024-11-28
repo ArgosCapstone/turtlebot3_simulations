@@ -72,14 +72,12 @@ def generate_launch_description():
         }.items()
     )
 
-    # Remove the IMU sensor node
-    # imu_sensor_cmd = Node(
-    #     package='turtlebot3_imu',
-    #     executable='turtlebot3_imu_node',
-    #     name='turtlebot3_imu',
-    #     output='screen',
-    #     parameters=[{'initial_orientation_as_reference': True}]
-    # )
+    yolov8_node = Node(
+        package='turtlebot3_gazebo', 
+        executable='run_two_models.py',  # Right Path?
+        name='yolov8_node',
+        output='screen'
+    )
 
     ld = LaunchDescription()
 
@@ -90,7 +88,6 @@ def generate_launch_description():
     ld.add_action(gzclient_cmd)
     ld.add_action(robot_state_publisher_cmd)
     ld.add_action(spawn_turtlebot_cmd)
-    # Remove the IMU sensor command from the launch description
-    # ld.add_action(imu_sensor_cmd)
+    ld.add_action(yolov8_node)
 
     return ld
