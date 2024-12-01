@@ -38,7 +38,7 @@ def generate_launch_description():
     world = os.path.join(
         get_package_share_directory('turtlebot3_gazebo'),
         'worlds',
-        'parking_garage.world'  # Changed from 'turtlebot3_argos_world.world'
+        'parking_garage_fire.world'  # Changed from 'parking_garage_fire.world'
     )
 
     gzserver_cmd = IncludeLaunchDescription(
@@ -72,13 +72,6 @@ def generate_launch_description():
         }.items()
     )
 
-    yolov8_node = Node(
-        package='turtlebot3_gazebo', 
-        executable='run_two_models.py',  # Right Path?
-        name='yolov8_node',
-        output='screen'
-    )
-
     ld = LaunchDescription()
 
     # Add the commands to the launch description
@@ -88,6 +81,5 @@ def generate_launch_description():
     ld.add_action(gzclient_cmd)
     ld.add_action(robot_state_publisher_cmd)
     ld.add_action(spawn_turtlebot_cmd)
-    ld.add_action(yolov8_node)
 
     return ld
